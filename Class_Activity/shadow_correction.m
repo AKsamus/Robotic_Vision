@@ -1,4 +1,4 @@
-im=imread('../assets/parks.jpg');	% read an image and use gamma correction
+im=imread('../assets/professors_ref_imgs/parks.jpg');	% read an image and use gamma correction
 figure;
 imshow(im);	
 im=lin2rgb(im);         %Apply gamma correction to the image according to the sRGB standard, storing the values in double precision
