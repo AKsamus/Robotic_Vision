@@ -17,7 +17,7 @@ if __name__ == "__main__":
                 print(f"Error occurred while applying median blur with kernel size {i}: {e}")
         #denoised_image = cv2.medianBlur(img, 5)  # adjust the kernel size for stronger or weaker denoising
         
-        # Display the original and processed images
+        # Displ ay the original and processed images
         #normfunc.display_images(denoised_image)
     else:
         print("Failed to load the image.")
