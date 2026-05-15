@@ -7,4 +7,8 @@ from pathlib import Path
 import cv2
 import matplotlib.pylab as plt
 
+
+
 #files = Path(".").glob("*.py")
+dog_imgs = Path("../assets/training_set/dog/").glob("*.jpg")
+cat_imgs = Path("../assets/training_set/cat/").glob("*.jpg")
