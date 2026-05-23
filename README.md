@@ -15,12 +15,12 @@ The work includes practical implementations of vision algorithms, robotic percep
 
 ## Areas Explored
 
-* Image processing
-* Feature detection and matching
-* Camera transformations
-* Computer vision for robotics
-* Visual perception experiments
-* Robot vision workflows
+* Image filtering and smoothing
+* Edge detection
+* Thresholding
+* Morphological operations
+* Masking and segmentation
+* Background removal
 
 ## MATLAB Dependencies
 
