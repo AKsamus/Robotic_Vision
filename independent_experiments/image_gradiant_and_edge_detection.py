@@ -18,11 +18,28 @@ sobel_combined = cv2.convertScaleAbs(sobel_combined)  # Convert the combined Sob
 canny = cv2.Canny(cat, 100, 200)  # Canny edge detection with lower and upper thresholds of 100 and 200, respectively
 canny = cv2.convertScaleAbs(canny)  # Convert the Canny result to an 8-bit image for display
 
-row1 = np.hstack((cat, laplacian, canny))
-row2 = np.hstack((sobelx, sobely, sobel_combined))
-side_by_side = np.vstack((row1, row2))
-cv2.imshow("Original Image vs Laplacian vs Sobel vs Canny", side_by_side)
-cv2.imwrite("Results/basics/original_vs_laplacian_vs_canny_vs_sobelx_vs_sobely_vs_sobel_combined.png", side_by_side)
+original_vs_laplacian = np.hstack((cat, laplacian))
+original_vs_sobelx = np.hstack((cat, sobelx))
+original_vs_sobely = np.hstack((cat, sobely))
+original_vs_sobel_combined = np.hstack((cat, sobel_combined))
+original_vs_canny = np.hstack((cat, canny))
+#cv2.imshow("Original Image vs Laplacian", original_vs_laplacian)
+#cv2.imshow("Original Image vs Sobel X", original_vs_sobelx)
+#cv2.imshow("Original Image vs Sobel Y", original_vs_sobely)
+#cv2.imshow("Original Image vs Sobel Combined", original_vs_sobel_combined)
+#cv2.imshow("Original Image vs Canny", original_vs_canny)
+
+cv2.imwrite("Results/edge_detection/original_vs_laplacian.png", original_vs_laplacian)
+cv2.imwrite("Results/edge_detection/original_vs_sobelx.png", original_vs_sobelx)
+cv2.imwrite("Results/edge_detection/original_vs_sobely.png", original_vs_sobely)
+cv2.imwrite("Results/edge_detection/original_vs_sobel_combined.png", original_vs_sobel_combined)
+cv2.imwrite("Results/edge_detection/original_vs_canny.png", original_vs_canny)
+
+#row1 = np.hstack((cat, laplacian, canny))
+#row2 = np.hstack((sobelx, sobely, sobel_combined))
+#side_by_side = np.vstack((row1, row2))
+#cv2.imshow("Original Image vs Laplacian vs Sobel vs Canny", side_by_side)
+#cv2.imwrite("Results/basics/original_vs_laplacian_vs_canny_vs_sobelx_vs_sobely_vs_sobel_combined.png", side_by_side)
 #cv2.imshow("Original Image", cat)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
