@@ -1,3 +1,4 @@
+"""thresholds binary, binary inverse, trunc, mean, gaussian"""
 import cv2
 from matplotlib.pyplot import gray
 
