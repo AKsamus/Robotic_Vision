@@ -1,5 +1,4 @@
-from calendar import c
-from functools import cache
+"""background changer using color masking and bitwise operations"""
 
 import cv2
 import numpy as np

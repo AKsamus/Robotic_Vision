@@ -1,3 +1,4 @@
+"""color masking and bitwise operations and trackbars for real-time adjustment of HSV values for color detection, allowing the user to fine-tune the color detection in real-time"""
 import cv2
 import numpy as np
 

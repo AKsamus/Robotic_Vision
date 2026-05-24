@@ -29,5 +29,17 @@ Some MATLAB experiments require:
 * Robotics Toolbox (RTB)
 * Spatial Math Toolbox for MATLAB
 
+## Sample Outputs
+
+* Morphological Transformations
+![Morphological Transformations](Results/for_readme/morphological_transformations_thres101_kernel3x3.png)
+
+* Edge Detection
+![Edge Detection](Results/for_readme/original_vs_laplacian_vs_canny_vs_sobelx_vs_sobely_vs_sobel_combined.png)
+
+* Smoothing
+![Smoothing](Results/for_readme/original_vs_smoothed_vs_blurred_vs_gaussian_blurred_vs_median_blurred_vs_bilateral.png)
+
+
 Download:
 https://petercorke.com/toolboxes/robotics-toolbox/
