@@ -1,3 +1,4 @@
+"""load, display, save image, tried removing shadow"""
 import cv2
 from os import path
 
