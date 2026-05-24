@@ -1,3 +1,4 @@
+"""Image croping using mouse events"""
 import cv2
 # we can use gui to take img file imput using file browers
 img = cv2.imread("assets/cat_and_dog/training_set/dogs/dog.5.jpg")
