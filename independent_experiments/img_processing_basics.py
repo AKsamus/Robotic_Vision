@@ -1,3 +1,4 @@
+"""pixel intensity distribution, color channels, resizing, sharpening, blurring"""
 ###for basic testing of available features
 #supporting libraries
 import pandas as pd
