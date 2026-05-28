@@ -1,5 +1,7 @@
+"""learn: dectect/draw contours, moment, approximation and hull"""
 import cv2
 import numpy as np
+from numpy.char import center
 
 #getting images
 img = cv2.imread("assets/professors_ref_imgs/shapes.png")
@@ -19,10 +21,30 @@ img_cnts = cv2.drawContours(resized_img, cnts, -1, (0, 0, 0), 4)    #-1 represte
 #cv2.imshow("original", resized_img)
 #cv2.imshow("Threshold", thresh)
 
+#cnt_areas = [] #to store area of each contour
+#calculating moment to get center points, contour area, approximation and convex hull
+for cnt in cnts:
+    M = cv2.moments(cnt)
+    cX = int(M["m10"]/M["m00"])
+    cY = int(M["m01"]/M["m00"])
+    cv2.drawContours(resized_img, [cnt], -1, (0, 0, 0),  2)
+    cv2.circle(resized_img, (cX, cY), 3, (0,0,0), -1)
+    cv2.putText(resized_img, "center", (cX-20, cY+20), cv2.FONT_HERSHEY_SIMPLEX, 0.5,
+                (0, 0, 0), 2)
+    area = cv2.contourArea(cnt)
+    #cnt_areas.append(area)
+    if area<5000:       #to filter required area
+        epsilon = 0.01*cv2.arcLength(cnt,True) #0.01 decides the accuracy lower value better accuracy 
+        data = cv2.approxPolyDP(cnt, epsilon, True)
+        hull = cv2.convexHull(data)
+        x,y,w,h = cv2.boundingRect(hull)
+        resized_img = cv2.rectangle(resized_img, (x, y), (x+w, y+h), (60, 20, 140), 5)    
+    
+
 
 #clubbing images
 original_vs_contoured = np.hstack([original, resized_img])
-#cv2.imshow("original_vs_contoured", original_vs_contoured)
+cv2.imshow("original_vs_contoured", original_vs_contoured)
 cv2.imwrite("Results/image_contours/original_vs_contoured.png", original_vs_contoured)
 
 cv2.waitKey(0)
