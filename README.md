@@ -40,6 +40,9 @@ Some MATLAB experiments require:
 * Smoothing
 ![Smoothing](Results/for_readme/original_vs_smoothed_vs_blurred_vs_gaussian_blurred_vs_median_blurred_vs_bilateral.png)
 
+* Contouring
+![Contouring](Results/for_readme/original_vs_contoured.png)
+
 
 Download:
 https://petercorke.com/toolboxes/robotics-toolbox/
